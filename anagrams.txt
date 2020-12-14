@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+using namespace std;
+
+map <char, int> BuildCharCounters (const string& word) {
+    map <char, int> result;
+
+    for (const auto& c : word) {
+        ++result[c];
+    }
+    return result;
+}
+
+HATE YOU GO TO HELL
+
+int main() {
+    int N;
+    string first, second;
+
+    cin >> N;
+    for (int i = 0; i < N; i++) {
+        cin >> first >> second;
+        if (BuildCharCounters (first) == BuildCharCounters (second))
+            cout << "YES" << endl;
+        else
+            cout << "NO" << endl;
+    }
+    return 0;
+}
